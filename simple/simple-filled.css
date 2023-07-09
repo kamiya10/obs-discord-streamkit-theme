@@ -1,0 +1,63 @@
+ul {
+  display: inline;
+}
+
+li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  margin-bottom: 4px !important;
+  padding: 4px;
+  border-radius: 64px;
+  isolation: isolate
+}
+
+div[class*=Voice_user]::before {
+  content: "";
+	position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 64px;
+  background-color: rgb(0 0 0 / 60%);
+  transition: background-color .1s;
+  z-index: -5;
+}
+
+img[class*=Voice_avatarSpeaking] + div[class*=Voice_user]::before {
+  background-color: rgb(59 165 59 / 80%);
+}
+
+li[class*=Voice_smallAvatar] {
+  height: 32px;
+}
+
+img[class*=Voice_avatar] {
+  height: 32px;
+  width: 32px;
+  margin: 0;
+  opacity:  .8;
+  transition: opacity .1s;
+  z-index: 5;
+}
+
+div[class*=Voice_user] {
+  padding: 0;
+  opacity:  .8;
+  transition: opacity .1s;
+}
+
+span[class*=Voice_name] {
+  font-size: 16px !important;
+  line-height: 16px;
+  padding-right: 8px;
+  border-radius: 24px;
+  background-color: transparent !important;
+}
+
+img[class*=Voice_avatarSpeaking] ,
+img[class*=Voice_avatarSpeaking] + div[class*=Voice_user] {
+  opacity: 1;
+}

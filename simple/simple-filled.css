@@ -1,13 +1,17 @@
-ul {
-  display: inline;
+ul[class*=Voice_voiceStates] {
+  all: unset;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  padding: 0;
 }
 
 li {
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  width: fit-content;
-  margin-bottom: 4px !important;
+  margin-bottom: 0 !important;
   padding: 4px;
   border-radius: 64px;
   isolation: isolate
@@ -15,7 +19,7 @@ li {
 
 div[class*=Voice_user]::before {
   content: "";
-	position: absolute;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -31,7 +35,7 @@ img[class*=Voice_avatarSpeaking] + div[class*=Voice_user]::before {
 }
 
 li[class*=Voice_smallAvatar] {
-  height: 32px;
+  height: 36px;
 }
 
 img[class*=Voice_avatar] {
